@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{19D57223-17D3-4011-88F9-BA0955070411}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B794C67-515A-4F0A-945A-C4F843503FFE}"
+	ProjectSection(SolutionItems) = preProject
+		..\docs\MLA Handbook (8th ed).pdf = ..\docs\MLA Handbook (8th ed).pdf
+		..\README.md = ..\README.md
+		..\docs\The Chicago Manual of Style (17th Ed).pdf = ..\docs\The Chicago Manual of Style (17th Ed).pdf
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cascade.Challenges.Books.Mvc", "Cascade.Challenges.Books.Mvc\Cascade.Challenges.Books.Mvc.csproj", "{38A8C671-EA8A-4C61-A549-36BD6821DA71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cascade.Challenges.Books.Sql", "Cascade.Challenges.Books.Sql", "{97EB2DBB-5EA8-488D-9B6E-D9389D3EE808}"
+	ProjectSection(SolutionItems) = preProject
+		Cascade.Challenges.Books.Sql\create-procedure-getbooksby.sql = Cascade.Challenges.Books.Sql\create-procedure-getbooksby.sql
+		Cascade.Challenges.Books.Sql\create-table-books.sql = Cascade.Challenges.Books.Sql\create-table-books.sql
+		Cascade.Challenges.Books.Sql\create-view-books-by-auth.sql = Cascade.Challenges.Books.Sql\create-view-books-by-auth.sql
+		Cascade.Challenges.Books.Sql\create-view-books-by-pub.sql = Cascade.Challenges.Books.Sql\create-view-books-by-pub.sql
+		Cascade.Challenges.Books.Sql\examples.sql = Cascade.Challenges.Books.Sql\examples.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38A8C671-EA8A-4C61-A549-36BD6821DA71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A8C671-EA8A-4C61-A549-36BD6821DA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A8C671-EA8A-4C61-A549-36BD6821DA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A8C671-EA8A-4C61-A549-36BD6821DA71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38A8C671-EA8A-4C61-A549-36BD6821DA71} = {19D57223-17D3-4011-88F9-BA0955070411}
+		{97EB2DBB-5EA8-488D-9B6E-D9389D3EE808} = {19D57223-17D3-4011-88F9-BA0955070411}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BA505C4-8460-4588-8977-EF6C71E58A62}
+	EndGlobalSection
+EndGlobal
