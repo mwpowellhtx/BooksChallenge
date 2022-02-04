@@ -1,0 +1,43 @@
+﻿@using Cascade.Challenges.Books.Mvc.Models
+
+@{
+    ViewData["Title"] = "Books";
+    Book template = ViewBag.Template;
+}
+
+<h1>Books</h1>
+
+<table cellpadding="0" cellspacing="0" class="table">
+    <thead>
+        <tr>
+            <th scope="col">@nameof(Book.Publisher)</th>
+            <th scope="col">@nameof(Book.AddedOn)</th>
+            <th scope="col">@nameof(Book.PublishedOn)</th>
+            <th scope="col">@nameof(Book.AuthorLastName)</th>
+            <th scope="col">@nameof(Book.AuthorFirstName)</th>
+            <th scope="col">@nameof(Book.Title)</th>
+            <th scope="col">@nameof(Book.Price)</th>
+            <th scope="col">@nameof(Book.Quantity)</th>
+            <th scope="col">@nameof(Book.TotalPrice)</th>
+            <th scope="col">@nameof(Book.StartPage)</th>
+            <th scope="col">@nameof(Book.PageCount)</th>
+        </tr>
+    </thead>
+    @foreach (Book book in Model)
+    {
+        <tr data-id="@($"{book.BookID:d}")">
+            <td>@book.Publisher</td>
+            <td>@book.AddedOn</td>
+            <td>@book.PublishedOn</td>
+            <td>@book.AuthorLastName</td>
+            <td>@book.AuthorFirstName</td>
+            <td>@book.Title</td>
+            <td>@book.Price</td>
+            <td>@book.Quantity</td>
+            <td>@book.TotalPrice</td>
+            <td>@book.StartPage</td>
+            <td>@book.PageCount</td>
+        </tr>
+    }
+
+</table>
