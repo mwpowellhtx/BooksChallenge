@@ -1,0 +1,4 @@
+# starting with some of the basic ignore entries, as discovered during the natural source commit effort
+.vs/
+obj/
+bin/
