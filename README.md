@@ -1,5 +1,5 @@
-# Cascade_Backend_Developer_Assessment
-NOTE: All work for this position is done using .NET Core 3.1, C#, and SQL.
+# Taking the Books Challenge
+All work for this position is done using _.NET Core 3.1_, _C#_, and _Sql Server_.
 
 # Overview
 This exercise is intended to take no longer than 8 hours. Please limit the detail of your solution with that time in mind.  Please include a README with your submission detailing your solution. The solution must be COMPLETE and RUNNABLE.
