@@ -5,11 +5,10 @@ VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{19D57223-17D3-4011-88F9-BA0955070411}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B794C67-515A-4F0A-945A-C4F843503FFE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sln", ".sln", "{6B794C67-515A-4F0A-945A-C4F843503FFE}"
 	ProjectSection(SolutionItems) = preProject
-		..\docs\MLA Handbook (8th ed).pdf = ..\docs\MLA Handbook (8th ed).pdf
+		..\.gitignore = ..\.gitignore
 		..\README.md = ..\README.md
-		..\docs\The Chicago Manual of Style (17th Ed).pdf = ..\docs\The Chicago Manual of Style (17th Ed).pdf
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cascade.Challenges.Books.Mvc", "Cascade.Challenges.Books.Mvc\Cascade.Challenges.Books.Mvc.csproj", "{38A8C671-EA8A-4C61-A549-36BD6821DA71}"
@@ -21,6 +20,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cascade.Challenges.Books.Sq
 		Cascade.Challenges.Books.Sql\create-view-books-by-auth.sql = Cascade.Challenges.Books.Sql\create-view-books-by-auth.sql
 		Cascade.Challenges.Books.Sql\create-view-books-by-pub.sql = Cascade.Challenges.Books.Sql\create-view-books-by-pub.sql
 		Cascade.Challenges.Books.Sql\examples.sql = Cascade.Challenges.Books.Sql\examples.sql
+		Cascade.Challenges.Books.Sql\README.md = Cascade.Challenges.Books.Sql\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{F1ECCA81-4196-4739-BA2B-6806BB4CD7A2}"
+	ProjectSection(SolutionItems) = preProject
+		..\docs\MLA Handbook (8th ed).pdf = ..\docs\MLA Handbook (8th ed).pdf
+		..\docs\The Chicago Manual of Style (17th Ed).pdf = ..\docs\The Chicago Manual of Style (17th Ed).pdf
 	EndProjectSection
 EndProject
 Global
