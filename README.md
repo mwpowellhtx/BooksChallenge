@@ -36,8 +36,6 @@ public class Book
 1. Add a property to the Book class that outputs the MLA ([Modern Language Association](https://images.app.goo.gl/YkFgbSGiPmie9GgWA)) style citation as a string. Please add whatever additional properties the Book class needs to generate the citation.
 1. Add another property to generate a Chicago style citation ([Chicago Manual of Style](https://images.app.goo.gl/w3SRpg2ZFsXewdAj7)).
 
-___
-
 ## Submission
 * Send an email to your Cascade contact with a link to your solution on your github account when completed.
 
@@ -53,9 +51,6 @@ ___
 1. Approached the question of the citation formatting as `IFormatProvider` and `ICustomFormatter` implementations; properly by the `ChicagoBookCitationFormatProvider` and `MlaBookCitationFormatProvider` implementations.
 1. Added `TotalPrice` comprehension extending through the _MVC API_.
 1. Re: saving a large set of instances, best guesses include some combination of `DbContext.UpdateRange(params object[] entities)` and `DbContext.SaveChanges()`; possibly extending into some `async` code, i.e. using `DbContext.SaveChangesAsync()` for starters.
-
-## Pending
-1. Ran out of time this afternoon before my earlier COB commitment, so will have pushed what I have and round out the remaining couple of questions perhaps into the weekend or Monday at the latest.
-
-## Known issues
-None at this time.
+1. Extending the thought on large sets of data, anything more involved than that, we might consider patterns, architectures, etc, such as eventually consistent, message queues, etc.
+1. Re: book citations, implemented them as `IFormatProvider` `ICustomFormatter` and wired them into the MVC architecture via standard _Dependency Injection_ conventions.
+1. Book citations are then embedded with each book table row as element attributes. From there, we could implement things like [CopyToClipboard](https://docs.microsoft.com/en-us/dotnet/api/system.windows.clipboard), or potentially other transformations, and so on.
