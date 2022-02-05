@@ -39,7 +39,7 @@ public class Book
 ___
 
 ## Submission
-* Send an [email](mailto:shiva@cascadefintech.com) to your Cascade contact with a link to your solution on your github account when completed.
+* Send an email to your Cascade contact with a link to your solution on your github account when completed.
 
 1. Do not submit a PR. 
 1. Do not ask for external assistance. 
