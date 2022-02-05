@@ -49,22 +49,11 @@ ___
 ## Solutions
 1. Presented the database with randomized data for test purposes.
 1. Elaborated a little bit on the properties; `AddedOn`, `PublishedOn`, `Quantity`, `StartPage`, `PageCount`, `TotalPrice`, `EndPage`.
+1. Corrected issues with the `GetBooksBy` SP invocation, works fantastic.
 1. Approached the question of the citation formatting as `IFormatProvider` and `ICustomFormatter` implementations; properly by the `ChicagoBookCitationFormatProvider` and `MlaBookCitationFormatProvider` implementations.
 
 ## Pending
 1. Ran out of time this afternoon before my earlier COB commitment, so will have pushed what I have and round out the remaining couple of questions perhaps into the weekend or Monday at the latest.
 
-## Known Issues
-1. There appears to be differences between the way in which `Sql Server` treats the `sp_executesql` for `SPName`, failing to relay arguments accordingly, versus raw manager side `exec SPName @key = '...'` which does relay the appropriate argument. Perhaps also the motivation for a couple of different stored procedures. See `[1]` below for example. This can be for many reasons, I need to patch my _Sql Server_ instance, migrate the projects to the latest _dotnet core_ runtimes (i.e. currently `netcoreapp 3.1`), and migrating to the latest _Entity Framework_ packages, however, considering the issue seems 'fine' (quote unquote) under _Sql Server Profiler_ inspection, I suspect the issue is contained, if not also resolved, by a _Sql Server_ patch, upgrade, or what have you.
-
-`[1]` for instance:
-```sql
--- Each of these works just fine...
-exec GetBooksBy @key = 'auth'
-exec GetBooksBy @key = 'pub'
-exec GetBooksBy
--- However, these do not appear to relay the argument as expected, with the apparently default value being present, i.e. sorted by 'auth', as indicated by _Sql Server Profiler_ inspection.
-exec sp_executesql N'exec GetBooksBy',N'@key varchar(9)',@key='auth' -- which is also the argument default value
-exec sp_executesql N'exec GetBooksBy',N'@key varchar(9)',@key='pub' -- appears to not be relayed
-exec sp_executesql N'exec GetBooksBy' -- in the default 'Books' set
-```
+## Known issues
+None at this time.
