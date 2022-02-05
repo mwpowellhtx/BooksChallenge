@@ -45,18 +45,19 @@ namespace Cascade.Challenges.Books.Mvc.Models.Data
             SaveChanges();
         }
 
-        ///// <inheritdoc/>
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    base.OnModelCreating(builder);
-        //    builder.Entity<Book>().HasKey(x => x.Id);
-        //}
+        /// <inheritdoc/>
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            // Because it is a model side computation for now
+            builder.Entity<Book>().Ignore(x => x.TotalPrice);
+        }
 
         /// <summary>
         /// Gets the default set of Books from the database.
         /// </summary>
         /// <remarks>Which is automatically injected for us.</remarks>
-        protected virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
 
         /// <summary>
         /// Returns the <see cref="IEnumerable{T}"/> set of <see cref="Book"/> entities aligned

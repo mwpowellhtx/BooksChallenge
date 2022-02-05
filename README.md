@@ -51,6 +51,7 @@ ___
 1. Elaborated a little bit on the properties; `AddedOn`, `PublishedOn`, `Quantity`, `StartPage`, `PageCount`, `TotalPrice`, `EndPage`.
 1. Corrected issues with the `GetBooksBy` SP invocation, works fantastic.
 1. Approached the question of the citation formatting as `IFormatProvider` and `ICustomFormatter` implementations; properly by the `ChicagoBookCitationFormatProvider` and `MlaBookCitationFormatProvider` implementations.
+1. Added `TotalPrice` comprehension extending through the _MVC API_.
 
 ## Pending
 1. Ran out of time this afternoon before my earlier COB commitment, so will have pushed what I have and round out the remaining couple of questions perhaps into the weekend or Monday at the latest.
