@@ -6,31 +6,22 @@ namespace Cascade.Challenges.Books.Mvc.Models
     /// 
     /// </summary>
     /// <see cref="!:https://owl.purdue.edu/owl/research_and_citation/chicago_manual_17th_edition/cmos_formatting_and_style_guide/books.html"/>
-    public class ChicagoBookCitationFormatProvider : ICloneable, IFormatProvider, ICustomFormatter
+    public class ChicagoBookCitationFormatProvider : BookCitationFormatProvider
     {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <inheritdoc/>
         public ChicagoBookCitationFormatProvider()
+            : base()
         {
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="other"></param>
+        /// <inheritdoc/>
         private ChicagoBookCitationFormatProvider(ChicagoBookCitationFormatProvider other)
+            : base(other)
         {
-            // TODO: TBD: transfer/translate whatever values/props from Other...
         }
 
         /// <inheritdoc/>
-        public object GetFormat(Type formatType) => formatType == typeof(ICustomFormatter) ? this : null;
-
-        /// <inheritdoc/>
-        /// <remarks>This provider is not designed to take a custom <paramref name="format"/> per se,
-        /// since the citation style guide defines for us the format for internal use.</remarks>
-        public string Format(string format, object arg, IFormatProvider formatProvider)
+        public override string Format(string format, object arg, IFormatProvider provider)
         {
             if (arg is Book book)
             {
@@ -39,11 +30,9 @@ namespace Cascade.Challenges.Books.Mvc.Models
                 return $"{book.AuthorLastName}, {book.AuthorFirstName}. {book.Title}. {book.Publisher}, {book.PublishedOn.Year}.";
             }
 
-            return arg?.ToString()
-                ?? throw new ArgumentNullException(nameof(arg), $"Expecting not null argument '{nameof(arg)}'")
-                ;
+            return base.Format(format, arg, provider);
         }
 
-        public virtual object Clone() => new ChicagoBookCitationFormatProvider(this);
+        public override object Clone() => new ChicagoBookCitationFormatProvider(this);
     }
 }
