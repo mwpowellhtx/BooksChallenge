@@ -1,6 +1,6 @@
 create table [Books] (
   -- for performance reasons not using a NEWSEQUENTIALID() or a COMB method
-  [Id] uniqueidentifier not null default newid()
+  [BookID] uniqueidentifier not null default newid()
   -- time stamp when a Book was introduced to the system
   , [AddedOn] datetimeoffset not null default getdate()
   , [Publisher] varchar(512) not null
