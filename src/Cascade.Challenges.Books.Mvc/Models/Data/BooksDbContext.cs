@@ -70,7 +70,7 @@ namespace Cascade.Challenges.Books.Mvc.Models.Data
             if (new[] { "pub", "auth", "publisher", "author" }.Contains(key.ToLowerInvariant()))
             {
                 var keyParam = new SqlParameter(nameof(key), SqlDbType.VarChar, 9) { Value = key };
-                return Books.FromSqlRaw("exec GetBooksBy", keyParam).ToList();
+                return Books.FromSqlRaw($"exec GetBooksBy @{nameof(key)}", keyParam).ToList();
             }
 
             return Books.FromSqlRaw("exec GetBooksBy").ToList();
