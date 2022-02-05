@@ -17,16 +17,6 @@ namespace Cascade.Challenges.Books.Mvc.Models
         /// </summary>
         public string Publisher { get; set; }
 
-        ///// <summary>
-        ///// Gets or Sets the ContainerTitle.
-        ///// </summary>
-        //public string ContainerTitle { get; set; }
-
-        ///// <summary>
-        ///// Gets or Sets the ContainerIssue.
-        ///// </summary>
-        //public string ContainerIssue { get; set; }
-
         /// <summary>
         /// Gets or Sets the Title.
         /// </summary>
@@ -36,11 +26,6 @@ namespace Cascade.Challenges.Books.Mvc.Models
         /// Gets or Sets the AddedOn date time.
         /// </summary>
         public DateTimeOffset AddedOn { get; set; } = DateTimeOffset.Now;
-
-        ///// <summary>
-        ///// Gets or Sets the SeriesTitle.
-        ///// </summary>
-        //public string SeriesTitle { get; set; }
 
         /// <summary>
         /// Gets or Sets the AuthorLastName.
