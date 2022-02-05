@@ -2,7 +2,11 @@
 
 @{
     ViewData["Title"] = "Books";
-    Book template = ViewBag.Template;
+
+    IDictionary<Type, BookCitationFormatProvider> bookCitationFormatProviders = ViewBag.BookCitationFormatProviders;
+
+    var chicago = bookCitationFormatProviders[typeof(ChicagoBookCitationFormatProvider)];
+    var mla = bookCitationFormatProviders[typeof(MlaBookCitationFormatProvider)];
 }
 
 <h1>Books</h1>
@@ -25,7 +29,11 @@
     </thead>
     @foreach (Book book in Model)
     {
-        <tr data-id="@($"{book.BookID:d}")">
+        var chicagoCitation = book.ToString(chicago);
+        var mlaCitation = book.ToString(mla);
+
+        <!-- TODO: TBD: from there we could do things such as copy to clipboard, etc, etc, etc... -->
+        <tr data-id="@($"{book.BookID:d}")" data-cit-chicago="@chicagoCitation" data-cit-mla="@mlaCitation">
             <td>@book.Publisher</td>
             <td>@book.AddedOn</td>
             <td>@book.PublishedOn</td>

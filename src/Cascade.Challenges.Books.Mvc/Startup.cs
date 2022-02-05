@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace Cascade.Challenges.Books.Mvc
 {
+    using Models;
     using Models.Data;
 
     public class Startup
@@ -31,12 +32,25 @@ namespace Cascade.Challenges.Books.Mvc
             options.UseSqlServer(connectionString);
         }
 
+        private static IEnumerable<BookCitationFormatProvider> GetBookCitationFormatProviders(IServiceProvider provider)
+        {
+            yield return provider.GetRequiredService<ChicagoBookCitationFormatProvider>();
+            yield return provider.GetRequiredService<MlaBookCitationFormatProvider>();
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             // TODO: TBD: for now singleton, let's see if that works...
             services.AddSingleton<BooksDataGenerator>();
             services.AddDbContext<BooksDbContext>(OnAddDbContext<BooksDbContext>);
+
+            services.AddTransient<ChicagoBookCitationFormatProvider>();
+            services.AddTransient<MlaBookCitationFormatProvider>();
+
+            // When we need a range of all of the format providers
+            services.AddTransient(GetBookCitationFormatProviders);
+            services.AddTransient(provider => GetBookCitationFormatProviders(provider).ToArray());
 
             services.AddControllersWithViews();
         }

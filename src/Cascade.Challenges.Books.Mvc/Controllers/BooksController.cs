@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Cascade.Challenges.Books.Mvc.Controllers
 {
@@ -11,10 +13,7 @@ namespace Cascade.Challenges.Books.Mvc.Controllers
     /// </summary>
     public class BooksController : Controller
     {
-        /// <summary>
-        /// Template Instance for internal use.
-        /// </summary>
-        private Book TemplateInstance { get; } = new Book();
+        private IDictionary<Type, BookCitationFormatProvider> BookCitationFormatProviders { get; }
 
         /// <summary>
         /// Gets the Context for the Controller.
@@ -24,9 +23,12 @@ namespace Cascade.Challenges.Books.Mvc.Controllers
         /// <summary>
         /// Default dependency injected ctor.
         /// </summary>
-        public BooksController(BooksDbContext context)
+        /// <param name="context"></param>
+        /// <param name="providers"></param>
+        public BooksController(BooksDbContext context, params BookCitationFormatProvider[] providers)
         {
             Context = context;
+            BookCitationFormatProviders = providers.ToDictionary(x => x.GetType());
         }
 
         /// <summary>
@@ -54,7 +56,8 @@ namespace Cascade.Challenges.Books.Mvc.Controllers
         /// <returns></returns>
         public IActionResult IndexBy(string key = "")
         {
-            ViewBag.Template = TemplateInstance;
+            // Including the Book Citation format providers for use by the grid presentation layer
+            ViewBag.BookCitationFormatProviders = BookCitationFormatProviders;
             return View("Views/Books/Index.cshtml", Context.GetBooksBy(key));
         }
 

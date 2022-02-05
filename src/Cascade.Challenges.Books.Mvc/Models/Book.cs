@@ -71,5 +71,18 @@ namespace Cascade.Challenges.Books.Mvc.Models
         /// Gets the calculated property considering <see cref="StartPage"/> and <see cref="PageCount"/>.
         /// </summary>
         public int EndPage => StartPage + PageCount - 1;
+
+        //
+        // Summary:
+        //     Returns a string that represents the current object.
+        //
+        // Returns:
+        //     A string that represents the current object.
+        /// <summary>
+        /// Returns a string that represents the current object.
+        /// </summary>
+        /// <param name="provider">Format Provider whichrenders the object to <see cref="string"/>.</param>
+        /// <returns>A string that represents the current object.</returns>
+        public virtual string ToString(IFormatProvider provider) => string.Format(provider, "{0}", this);
     }
 }
